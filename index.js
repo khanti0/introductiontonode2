@@ -31,6 +31,10 @@ let persons = [
   }
 ]
 
+const cors = require('cors')
+
+app.use(cors())
+
 app.get('/info', (request, response) => {
   response.send(
     `
@@ -100,7 +104,7 @@ app.post('/api/persons', (request, response) => {
 
   persons = persons.concat(person)
 
-  response.json(persons)
+  response.json(person)
 })
 
 const PORT = 3001
